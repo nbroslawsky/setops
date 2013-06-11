@@ -3,7 +3,7 @@ setops
 
 Various set operations in the CommonJS model
 
-##`transform(oldToNewMap, toChange [, generateNext])`
+###`transform(oldToNewMap, toChange [, generateNext])`
 
 Run `setops` with an array of existing values.
 
@@ -13,7 +13,7 @@ Run `setops` with an array of existing values.
 	* For example: the instruction is to change `1` to `2`, but `2` is already in the existing data set. The `generateNext` function will be called to change the `2` value to something not in the existing data set so that the `1` to `2` conversion can happen. By default, it will add 1 to the max value in the existing (or target) data set.
 * The return value is an array of the outputs of the provided `toChange` function.
 
-##`diff(targetData [, cbs])`
+###`diff(targetData [, cbs])`
 
 Run `setops` with an array of existing values
 
