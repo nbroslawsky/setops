@@ -1,7 +1,7 @@
 setops
 ======
 
-Various set operations in the CommonJS model
+Various set operations in the CommonJS model: `npm install setops`
 
 ###`transform(oldToNewMap, toChange [, generateNext])`
 
