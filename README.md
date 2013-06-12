@@ -1,6 +1,8 @@
 setops
 ======
 
+[![Build Status](https://secure.travis-ci.org/nbroslawsky/setops.png?branch=master)](http://travis-ci.org/nbroslawsky/setops)
+
 Various set operations in the CommonJS model: `npm install setops`
 
 ###`transform(oldToNewMap, toChange [, generateNext])`
