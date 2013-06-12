@@ -2,6 +2,7 @@ setops
 ======
 
 [![Build Status](https://secure.travis-ci.org/nbroslawsky/setops.png?branch=master)](http://travis-ci.org/nbroslawsky/setops)
+[![browser support](http://ci.testling.com/nbroslawsky/setops.png)](http://ci.testling.com/nbroslawsky/setops)
 
 Various set operations in the CommonJS model: `npm install setops`
 
