@@ -23,3 +23,11 @@ Run `setops` with an array of existing values
 * `targetData` is an array of new values
 * `cbs` is an optional parameter: it is an object with three function/callback properties that will be executed for every operation that needs to be performed: `toAdd`, `toRemove`, and `toLeave`. If not provided, the functions defined in this object will just return the values passed in.
 * The return value is an object with three array properties: `toAdd`, `toRemove`, and `toLeave`. Each item in these arrays is the returned value of the callback functions. For example, if the operations necessary to convert the existing data set into the target data set were to add the values `1`, `2`, and `3`, the `cbs.toAdd` callback function will be called with each of those values, and those outputs will be the resulting `toAdd` property.
+
+###`keyBy(property [, nestAsArrays])`
+
+Run `setops` with an array values
+
+* `property` is a string that will be dereferenced off of every item in the array
+* `nestAsArrays` is a boolean value that will determine if the items in the map that get returned are arrays
+* The return value is an object mapped off of the field you chose with the string `property`. If you chose to `nestAsArrays`, then each item in the array will be an array of items whose property were the same. If not, then each value will be just the item in the array whose property matched the key.
