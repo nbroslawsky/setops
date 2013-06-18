@@ -1,6 +1,14 @@
 var assert = require('chai').assert,
 	setops = require('../index.js');
 
+assert.deepEqualArray = function(a,b) {
+
+	this.deepEqual(
+		a.sort(function(a,b) { return a.id - b.id; }),
+		b.sort(function(a,b) { return a.id - b.id; })
+	);
+}
+
 function getFreshDataSet() {
 	return [
 		{ id : 2, old : 2, foo : 'bar' },
@@ -30,7 +38,7 @@ describe('converting old values to new values', function() {
 					return "converting " + oldValue + " to " + newValue;
 				}
 			);
-		assert.deepEqual(operations, [
+		assert.sameMembers(operations, [
 			'converting 2 to 38',
 			'converting 3 to 2',
 			'converting 38 to 3'
@@ -84,7 +92,7 @@ describe('converting old values to new values', function() {
 			{ id : 31, old : 31, foo : 'bar' },
 			{ id : 37, old : 37, foo : 'bar' }
 		];
-		assert.deepEqual(ds, target);
+		assert.deepEqualArray(ds, target);
 	});
 
 	it('should list the more difficult operations properly', function() {
@@ -106,7 +114,7 @@ describe('converting old values to new values', function() {
 					return "converting " + oldValue + " to " + newValue;
 				}
 			);
-		assert.deepEqual(operations, [
+		assert.sameMembers(operations, [
 			'converting 29 to 38',
 			'converting 1 to 29',
 			'converting 2 to 15',
@@ -138,7 +146,7 @@ describe('converting old values to new values', function() {
 					return "converting " + oldValue + " to " + newValue;
 				}
 			);
-		assert.deepEqual(operations, [
+		assert.sameMembers(operations, [
 			'converting 29 to 38',
 			'converting 1 to 29',
 			'converting 2 to 15',
@@ -188,7 +196,7 @@ describe('converting old values to new values', function() {
 			{ id : 5, old : 37, foo : 'bar' }
 		];
 
-		assert.deepEqual(ds, target);
+		assert.deepEqualArray(ds, target);
 	});
 
 	it('should change categories properly', function() {
@@ -271,7 +279,7 @@ describe('converting old values to new values', function() {
 			{ id : 48, language_code : "pt-BR", name : "Viagens e Turismo" }
 		];
 
-		assert.deepEqual( ds, target );
+		assert.deepEqualArray( ds, target );
 	})
 
 
