@@ -119,6 +119,38 @@ describe('converting old values to new values', function() {
 		]);
 	});
 
+	it('should list the more difficult operations properly (but in a different order)', function() {
+
+		var ds = getFreshDataSet();
+		var operations = setops(ds.map(function(v) { return v.id; }))
+			.transform(
+				{
+					1 : 29,
+					11 : 13,
+					13 : 6,
+					19 : 2,
+					2 : 15,
+					23 : 23,
+					31 : 1,
+					37 : 5
+				},
+				function(oldValue, newValue) {
+					return "converting " + oldValue + " to " + newValue;
+				}
+			);
+		assert.deepEqual(operations, [
+			'converting 29 to 38',
+			'converting 1 to 29',
+			'converting 2 to 15',
+			'converting 13 to 6',
+			'converting 11 to 13',
+			'converting 19 to 2',
+			'converting 31 to 1',
+			'converting 5 to 39',
+			'converting 37 to 5'
+		]);
+	});
+
 	it('should manipulate the more difficult data properly', function() {
 
 		var ds = getFreshDataSet();
