@@ -25,7 +25,9 @@ function go(r, methods) {
 go.methods = {
 	transform : require('./lib/transform.js'),
 	diff : require('./lib/diff.js'),
-	keyBy : require('./lib/key-by.js')
+	keyBy : require('./lib/key-by.js'),
+	unique : require('./lib/unique.js'),
+	union : require('./lib/union.js')
 };
 
 module.exports = go;

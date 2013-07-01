@@ -31,3 +31,16 @@ Run `setops` with an array values
 * `property` is a string that will be dereferenced off of every item in the array
 * `nestAsArrays` is a boolean value that will determine if the items in the map that get returned are arrays
 * The return value is an object mapped off of the field you chose with the string `property`. If you chose to `nestAsArrays`, then each item in the array will be an array of items whose property were the same. If not, then each value will be just the item in the array whose property matched the key.
+
+###`unique()`
+
+Run `setops` with an array values
+
+* The return value is an array with unique values (using a === comparison to other values in the array), with the order maintained.
+
+###`union(/* arguments */)`
+
+Run `setops` with an array of values
+
+* `union` takes in a variable number of arrays that will be unioned onto the array that setops() was initialized with and deduped
+* The return value will be a single array of all of the unique values between the initial array and the arrays passed into `union()`
