@@ -27,6 +27,7 @@ go.methods = {
 	diff : require('./lib/diff.js'),
 	keyBy : require('./lib/key-by.js'),
 	unique : require('./lib/unique.js'),
+	intersect : require('./lib/intersect.js'),
 	union : require('./lib/union.js')
 };
 
